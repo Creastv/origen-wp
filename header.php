@@ -11,28 +11,37 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-     <header id="header">
-	    <div class="grad-bar"></div>
-		<nav class="navbar" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-			<img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Bluestar_%28bus_company%29_logo.svg/1280px-Bluestar_%28bus_company%29_logo.svg.png" alt="Company Logo">
-			<div class="menu-toggle" id="mobile-menu">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</div>
-				<?php wp_nav_menu( array(
-					'walker' => new crea_Walker_Nav_Menu(),
-					'container'=> false,
-					'menu_class'=> 'nav no-search',
-				    'menu_id'=> 'header-nav',
-					'theme_location' => 'primary'
-				) ); ?>
-				<!-- <i class="fas fa-search" id="search-icon"></i>
-				<input class="search-input" type="text" placeholder="Search..">  -->
-		</nav>
-	</header> 
+    
+        <nav class="navbar my-paroller" data-aos-delay="400" data-aos="fade-up" id="navigation" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand visible-xs visible-sm " href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo-origen-destino.jpg" alt="Origen & Destino | Quinto Centenario de la Primera Vuelta al Mundo"></a>
+                </div>
+                 
+                <div id="navbar" class="col navbar-collapse collapse">
+                    <ul class="nav navbar-nav nav-ge">
+                        <li><a href="presentacion.html">Presentación</a></li>
+                        <li><a href="#Conoce-los-tescenariosde-un-viaje-historico">Escenarios</a></li>
+                    </ul>
 
-	<main id="main" class="row">
+                    <a class="logo2 hidden-xs hidden-sm " href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo-origen-destino.jpg" alt="Origen & Destino | Quinto Centenario de la Primera Vuelta al Mundo"></a>
+
+                    <ul class="nav navbar-nav nav-ge">
+                        <li><a href="#Experiencias">Experiencias</a></li>
+                        <li><a href="reservas.html">Carta de servicios</a></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </nav>
+
+	<main>
 
 	
 		
