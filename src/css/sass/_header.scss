@@ -151,9 +151,9 @@
     // }
     .logo2{
         @include trans;
-        width: 130px;
+        width: 130px!important;
         img{
-            width: 130px;
+            width: 130px!important;
             @include trans;
         }
     }

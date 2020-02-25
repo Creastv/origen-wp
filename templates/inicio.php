@@ -62,7 +62,7 @@ get_header(); ?>
     <!-- ==========================================================================
     Conoce los tescenarios de un viaje histórico
     ==========================================================================  -->
-    <section id="Conoce-los-tescenariosde-un-viaje-historico" class="sec-wrap">
+    <section id="" class="escenarios sec-wrap">
         <div class="container-fluid wraper">
             <div class="row">
                 <div class="col-md-12 my-paroller" data-aos-delay="200" data-aos="fade-up">
@@ -114,7 +114,7 @@ get_header(); ?>
      <!-- ==========================================================================
      Experiencias
     ==========================================================================  -->
-    <section id="Experiencias" class="sec-wrap">
+    <section id="" class="experiencias sec-wrap">
         <div class="container-fluid wraper">
             <div class="row">
                 <div class="col-md-12 my-paroller" data-aos-delay="200" data-aos="fade-up">

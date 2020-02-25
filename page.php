@@ -1,4 +1,21 @@
 <?php get_header(); ?>
-    <article class="col-xs-12 col-sm-8 col-md-8 col-lg-8"></article>
-    <aside  class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></aside>
+        <div class="col-md-12">
+            <div class="header-section">
+                <?php if (get_field('subtitulo', 'option')) : ?>
+                    <span><?php echo the_field('subtitulo', 'option'); ?></span>
+                <?php else : ?>
+                    <span>Origen & Destino</span>
+                <?php endif ; ?>
+                <h1><?php the_title(); ?></h1>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="content-border">
+            <?php while (have_posts()) : the_post(); ?>
+            <?php the_content();?>
+            <?php endwhile; ?>
+            </div>
+        </div>
+
+
 <?php get_footer(); ?>

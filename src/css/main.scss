@@ -1,6 +1,9 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@import "sass/_fonts.scss";
+@import "sass/_font-awesomes.scss";
+@import "sass/_aos";
 @import "sass/_variable.scss";
 @import "sass/_mixins.scss";
 @import "sass/_global.scss";
@@ -13,4 +16,3 @@
 @import "sass/_escenarios";
 @import "sass/_experiencia";
 @import "sass/_reservas"
-
