@@ -49,6 +49,15 @@ function register_acf_block_types() {
         'icon'              => 'admin-comments',
         'keywords'          => array( 'Escenarios' ),
     ));
+    acf_register_block_type(array(
+        'name'              => 'info',
+        'title'             => __('Info del proveedor'),
+        'description'       => __('Block info de proveedor'),
+        'render_template'   => 'blocks/info-proveedor.php',
+        'category'          => 'formatting',
+        'icon'              => 'admin-comments',
+        'keywords'          => array( 'Proveedor' ),
+    ));
     
      // register Block.
     // acf_register_block_type(array(

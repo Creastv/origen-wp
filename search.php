@@ -32,9 +32,9 @@
 
 <?php get_footer(); ?>
 <script>
-        jQuery(document).ready(function($) {
-            jQuery('#grid').masonry({
-                itemSelector: '.ficha'
-            });
+    jQuery(document).ready(function($) {
+        jQuery('#grid').masonry({
+            itemSelector: '.ficha'
         });
-    </script>
+    });
+</script>

@@ -39,10 +39,11 @@
         <h4>Conoce los escenarios de un viaje histórico</h4>
         <?php
         $terms =  get_terms("escenario", array("orderby" => "slug", "parent" => 0));
-        
+        $currentterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
             echo '<ul class="nav-fichias">';
             foreach ($terms as $term) { 
-                echo '<li> <a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+                $class = $currentterm->slug == $term->slug ? 'active' : '' ;
+                echo '<li class=" '. $class . '"> <a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
             }
             echo '</ul>';
         ?>

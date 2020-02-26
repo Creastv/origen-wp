@@ -14,20 +14,17 @@ get_header(); ?>
                     <?php
 							if ( is_category() ) :
 								single_cat_title();
-
-							elseif ( is_tag() ) :
-								single_tag_title();
-							elseif ( $tax ) :
-								printf( ''.$tax->name .'', 'cr');
-								
 						    elseif ($post->post_type == 'servicios') :
 						    	printf( 'Nuestros servicios', 'cr');
 						    elseif ($post->post_type == 'escenarios') :
 						    	printf( 'Escenarios', 'cr');	
 							elseif ($post->post_type == 'Experiencias') :
 								
-						    	printf( 'Experiencias', 'cr');	
-
+								printf( 'Experiencias', 'cr');	
+							elseif ( is_tag() ) :
+								single_tag_title();
+							elseif ( $tax ) :
+								printf( ''.$tax->name .'', 'cr');
 							elseif ( is_author() ) :the_post(); 
 
 								printf( '<span class="vcard">' . get_the_author() . '</span>' );

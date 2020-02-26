@@ -8,4 +8,5 @@
     <?php else: ?>
         <?php get_template_part( 'templates/single', get_post_format() ); ?>
     <?php endif; ?>
+    
 <?php get_footer(); ?>

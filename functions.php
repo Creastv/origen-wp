@@ -441,6 +441,9 @@ echo '<style type="text/css">
 .acf-block-component #slider .img-slide{
 	padding:20px;
 }
+.acf-block-component ul{
+	list-style: none!important;
+}
 </style>';
 }
 add_action('admin_head', 'custom_admin_css');

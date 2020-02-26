@@ -1,21 +1,23 @@
 <div class="col-md-3 col-sm-4">
     <div class="box-border">
-        <?php
-        $terms = get_the_terms( get_the_ID(), 'experiencia' );
-        if( ! empty( $terms ) ) : ?>
-            <ul  class="nav-fichias">	
-                <?php foreach( $terms as $term ) : ?>          
-                <li class="<?php echo $term->slug; ?>">
-                    <a href="<?php echo get_term_link($term) ?>">                                          
-                        <img src="<?php the_field('imagen_descatada', $term); ?>" />
-                        <?php echo $term->name ?>
-                    </a>
-                </li>
-                <?php endforeach; ?>
-            </ul> 
-        <?php endif; ?>
+  <?php
+                $tax = 'experiencia';
+                $terms = get_terms( $tax, $args = array(
+                'hide_empty' => false, )); 
+                 $currentterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
+            ?>
+            <?php if( ! empty( $terms ) ) : ?>
+                <ul class="nav-fichias">
+                <?php foreach( $terms as $term ) : ?>
+                     <?php  $class = $currentterm->slug == $term->slug ? 'active' : '' ; ?>  
+                    <li class="<?php echo $term->slug; ?> <?php echo $class; ?> " ><a href="<?php echo get_term_link($term) ?>"><img src="<?php the_field('imagen_descatada', $term); ?>" /> <?php echo $term->name ?></a></li>
+                 <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+       
     </div>
 </div>
+
 <div class="col-md-9 col-sm-8">
     <div class="" id="grid">
         <?php if ( have_posts() ) : ?>
