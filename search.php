@@ -15,7 +15,12 @@
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="ficha">
-                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        <div class="future" style="margin-bottom:10px;">
+                            <?php if ( has_post_thumbnail() ) : ?>
+                            <?php  the_post_thumbnail('large') ?>
+                        <?php endif; ?>
+                        </div>
+                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         <p><?php the_excerpt(); ?></p>
                         <a href="<?php the_permalink(); ?>" class="leemas">lee más</a>
                         <hr>

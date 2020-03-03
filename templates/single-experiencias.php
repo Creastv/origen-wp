@@ -11,22 +11,30 @@
         </div>
         
         <div class="box-border ficha-experiencia">
+            <?php 
+                $termss = get_the_terms( $post->ID, 'experiencia');
+                foreach ( $termss as $termo ) {
+                    $termoID[] = $termo->slug;
+                }
+            ?>
             <?php
                 $tax = 'experiencia';
                 $terms = get_terms( $tax, $args = array(
                 'hide_empty' => false, )); 
+                
                
                 
-            ?>
+            ?> 
             <?php if( ! empty( $terms ) ) : ?>
                 <ul class="nav-fichia-eper">
                 <?php foreach( $terms as $term ) : ?>
-                     
-                    <li ><a href="<?php echo get_term_link($term) ?>"><?php echo $term->name ?></a></li>
+                     <?php  $class = $termoID[0] == $term->slug ? 'active' : '' ; ?>  
+                    <li class="<?php echo $class; ?>"><a href="<?php echo get_term_link($term) ?>"><?php echo $term->name; ?></a></li>
                  <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
             <br>
+
             <div class="row">
                 <div class="col-md-4">
                     <?php if ( has_post_thumbnail() ) : ?>
@@ -65,17 +73,10 @@
                 </div>
                 <div class="col-md-8">
                     <div class="info-exp">
-                                    <p>"La clave Pigafetta" es un proyecto concebido por Ingevents para todos los públicos, con distintos formatos y con un propósito común: integrar a los participantes en la historia mediante el entretenimiento.</p>
-                                    <p>Para ello, desde febrero de 2019 se desarrollan distintas acciones como son:</p>
-                                    <ul>
-                                        <li>La puesta en marcha de una serie de escenarios ‘escape room’ portátiles, que recrearán escenarios históricos y que podrán recorrer distintos emplazamientos en ciudades vinculadas con la crónica de la Primera Circunnavegación del Globo Terráqueo.</li>
-                                        <li>La edición de un juego de mesa con el que los jugadores podrán emular a los protagonistas de la gesta de Magallanes y Elcano, al mismo tiempo que se divierten conociendo detalles de la historia de la expedición.</li>
-                                        <li>Una serie de ficción en formato podcast con dramatizaciones de la historia, en castellano, con música original y la participación de actores interpretando a los personajes históricos.</li>
-                                        <li>Mapping teatralizado: Mediante el uso de tecnología de proyección, efectos sonoros surround y la participación de una compañía teatral os invitamos a disfrutar de la representación de una obra escrita exclusivamente para conmemorar el V Centenario de la Circunnavegación a la Tierra. Dicha obra se subdivide en tres capítulos, comenzando en Octubre el primero de ellos, “El Comienzo Del Viaje”. Estate atento para embarcarte con nosotros.</li>
-                                    </ul>
-                                    <p>El proyecto ha sido incluido por el Ministerio de Cultura en el Programa Oficial del V Centenario de la Primera Vuelta al Mundo de Magallanes y Elcano.</p>
-                                    <h2>Precio</h2>
-                                    <p>Consultar.</p>  
+                       <?php while (have_posts()) : the_post(); ?>
+               
+                        <?php the_content();?>
+                        <?php endwhile; ?>
                     </div>
                 </div>
             </div>

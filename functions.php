@@ -66,7 +66,21 @@ register_nav_menus( array(
 
 }
 endif;
+
+
 add_action( 'after_setup_theme', 'crea_setup' );
+function cr_widgets_init() {
+        register_sidebar( array(
+			'name'          => __( 'Sidebar', 'cr' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		) );
+}
+add_action( 'widgets_init', 'cr_widgets_init' );
+
 
 
 
@@ -97,8 +111,6 @@ function cr_scripts() {
 
 	// script
 	wp_enqueue_script('cr-script', get_template_directory_uri().'/src/js/script.js', array( 'jquery' ),'3', true );
-	// load main js
-	wp_enqueue_script('cr-main', get_template_directory_uri().'/src/js/main.js', array( 'jquery' ),'3', true );
 	
 
 
@@ -305,9 +317,6 @@ function create_escenarios_taxonomies() {
 add_action( 'init', 'create_escenarios_taxonomies', 0 );
 
 
-
-
-
 if ( ! function_exists( 'cr_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
@@ -444,6 +453,107 @@ echo '<style type="text/css">
 .acf-block-component ul{
 	list-style: none!important;
 }
+.acf-block-component .experiencias {}
+.acf-block-component .experiencias .tab{
+	width: 18%;
+	display:inline-block;
+	padding: 10px;
+	text-align: center;
+	vertical-align: top;
+}
+.acf-block-component .experiencias .tab h3{
+	font-size:16px;
+}
+.acf-block-component .experiencias .tab{
+	font-size:16px;
+}
+.acf-block-component .experiencias .col-md-4{
+	text-align:center;
+}
+.acf-block-component .experiencias .col-md-4 i{
+	display: block;
+}
+.acf-block-component .escenarios .b{
+	display: inline-block;
+    width: 48%;
+}
+.acf-block-component .escenarios .box{
+	    background-size: cover!important;
+}
+.acf-block-component .escenarios .box .grad{
+	        background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,.65)));
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,.65) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000",endColorstr="#a6000000",GradientType=0);
+	padding:40px;
+}
+.acf-block-component .escenarios .box .grad .icon{
+	padding:10px;
+}
+
+.acf-block-component .escenarios .box .grad .content{
+	padding: 10px;
+	color: #fff;
+	text-decoration:none!important;
+}
+
+.acf-block-component .twd img{
+   display: block;
+    margin: 0 auto;
+}
+.acf-block-component .twd .des-video{
+	    display: block;
+    text-align: center;
+}
 </style>';
 }
 add_action('admin_head', 'custom_admin_css');
+
+
+function filter_plugin_updates( $value ) {
+
+  // Add references to plugins you want to disable update notices for in the $plugins array
+  $plugins = array(
+    'advanced-custom-fields-pro/acf.php'
+  );
+
+  foreach( $plugins as $plugin ) {
+    if ( isset( $value->response[$plugin] ) ) {
+      unset( $value->response[$plugin] );
+    }
+  }
+  return $value;
+}
+add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
+
+
+add_action( 'pre_get_posts', 'my_change_sort_order'); 
+    function my_change_sort_order($query){
+        if(is_archive()):
+         //If you wanted it for the archive of a custom post type use: is_post_type_archive( $post_type )
+           //Set the order ASC or DESC
+           $query->set( 'order', 'ASC' );
+           //Set the orderby
+           $query->set( 'orderby', 'title' );
+        endif;    
+    };
+
+
+	function kct_page_css_class( $css_class, $page, $depth, $args, $current_page ) {
+  if ( !isset($args['post_type']) || !is_singular($args['post_type']) )
+    return $css_class;
+
+  global $post;
+  $current_page  = $post->ID;
+  $_current_page = $post;
+  _get_post_ancestors($_current_page);
+
+  if ( isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors) )
+    $css_class[] = 'current_page_ancestor';
+  if ( $page->ID == $current_page )
+    $css_class[] = 'current_page_item';
+  elseif ( $_current_page && $page->ID == $_current_page->post_parent )
+    $css_class[] = 'current_page_parent';
+
+  return $css_class;
+}
+add_filter( 'page_css_class', 'kct_page_css_class', 10, 5 );

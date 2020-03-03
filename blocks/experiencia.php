@@ -65,10 +65,10 @@ $pBottom = get_field('padding-bottom_ex') . 'px';
                 <div class="col-md-4 col-sm-12 my-paroller" data-aos-delay="700" data-aos="fade-up">
                     <?php $imagenVideoEx = get_field('imagen_ex');
                         if( !empty( $imagenVideoEx ) ): ?>
-                        <a href="<?php if( get_field('video_ex') ): ?><?php the_field('video_ex') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/andalucia_v_centenario_ES_rect_960.mp4 <?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive" src="<?php echo esc_url($imagenVideoEx['url']); ?>" alt="<?php echo esc_attr($imagenVideoEx['alt']); ?>"></a>
+                        <a href="<?php if( get_field('video_ex') ): ?><?php the_field('video_ex') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/andalucia_v_centenario_ES_rect_960.mp4 <?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive center-block" src="<?php echo esc_url($imagenVideoEx['url']); ?>" alt="<?php echo esc_attr($imagenVideoEx['alt']); ?>"></a>
                         <i class="des-video text-center"><?php echo esc_attr($imagenVideoEx['alt']); ?></i>
                     <?php else : ?>
-                        <a href="<?php if( get_field('video_ex') ): ?><?php the_field('video_ex') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/andalucia_v_centenario_ES_rect_960.mp4 <?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/src/img/en-andalutcia-empezo-todo.jpg" alt=""></a>
+                        <a href="<?php if( get_field('video_ex') ): ?><?php the_field('video_ex') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/andalucia_v_centenario_ES_rect_960.mp4 <?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/src/img/en-andalutcia-empezo-todo.jpg" alt=""></a>
                         <i class="des-video text-center">Proyecto Andalucía, Origen y Destino</i>
                     <?php endif; ?>
                 </div>

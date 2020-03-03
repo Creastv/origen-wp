@@ -101,19 +101,21 @@
                             ?>
                                 <div class="col-md-6 col-sm-6 my-paroller" data-aos-delay="200" data-aos="fade-up">
                                     <div class="box" style="background:url(<?php echo $imageEs['url']; ?>);">
-                                        <div class="grad grad-3">
-                                            <?php if (!empty($linkEs && $iconEs['url'] )):?>
-                                                <div class="icon">
-                                                    <a href="<?php echo $linkEs; ?>"><img src="<?php echo $iconEs['url']; ?>" alt="<?php echo $iconEs['alt'] ?>"></a>
-                                                </div>
-                                            <?php endif;?>
-                                            <div class="content">
-                                                <a href="<?php echo $linkEs; ?>"><h2><?php echo $titleEs; ?></h2></a>
-                                                <?php if (!empty($linkEs && $buttonEs )):?>
-                                                <a href="<?php echo $linkEs; ?>" class="btn"><?php echo $buttonEs; ?></a>
+                                        <a href="<?php echo $linkEs; ?>">
+                                            <div class="grad grad-3">
+                                                <?php if (!empty($linkEs && $iconEs['url'] )):?>
+                                                    <div class="icon">
+                                                       <img src="<?php echo $iconEs['url']; ?>" alt="<?php echo $iconEs['alt'] ?>">
+                                                    </div>
                                                 <?php endif;?>
+                                                <div class="content">
+                                                    <h2><?php echo $titleEs; ?></h2>
+                                                    <?php if (!empty($linkEs && $buttonEs )):?>
+                                                    <span href="<?php echo $linkEs; ?>" class="btn"><?php echo $buttonEs; ?></span>
+                                                    <?php endif;?>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             <?php endwhile; ?>

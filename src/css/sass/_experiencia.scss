@@ -99,84 +99,94 @@
 // 				}
 // 			}
 // 		}
-		
+
 // 	}
 // }
-.ficha-experiencia{
-	.r{
-		background: $main;
-		padding: 2px 5px;
-		color: #fff;
-	}
+.ficha-experiencia {
+  .r {
+    background: $main;
+    padding: 2px 5px;
+    color: #fff;
+  }
 }
 
-.nav-fichia-eper{
-	list-style: none;
-	padding-left: 0px;
-	margin-bottom: 0px;
-	.active{
-		a{
-			color:#fff!important;
-			background:$main;
-		}
-	}
-	li{
-		display: inline-block;
-		margin: 5px 0px;
-		a{
-			display:block;
-			border:1px solid $main;
-			color:$main;
-			padding: 5px;
-			font-size: 18px;
-		}
-	}
+.nav-fichia-eper {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  .active {
+    a {
+      color: #fff!important;
+      background: $main;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+
+    a {
+      display: block;
+      border: 1px solid $main;
+      color: $main;
+      padding: 5px;
+      font-size: 18px;
+    }
+  }
 }
 
-.info-exp{
-	padding: 20px 0;
-	b{
-		font-weight: 900;
-	}
-	ul{
-		padding-left: 0;
-	}
-	h2{
-		font-size: 21px;
-		background: $main;
-		padding: 2px 5px;
-		color: #fff;
-		display: inline-block;
-	}
+.info-exp {
+  padding: 20px 0;
+
+  b {
+    font-weight: 900;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  h2 {
+    font-size: 21px;
+    background: $main;
+    padding: 2px 5px;
+    color: #fff;
+    display: inline-block;
+  }
 }
 
+.otra-f-e {
+  background: #ececed;
+  padding: 15px;
 
+  h2 {
+    margin: 0;
+    padding: 10px 0;
 
-.otra-f-e{
-	background:#ececed;
-	padding:15px;
-	h2{
-		margin: 0;
-		padding: 10px 0;
-		a{
-			font-family: 'cormorant_garamondbold', serif;
-		    font-weight: 700;
-		    font-size: 30px;
-		}
-	}
-	h4{
-		background:#aaaaaa;
-		color:#fff;
-		padding: 2px 5px;
-		display: inline-block;
-	}
-	ul{
-		display: block;
-		list-style: none;
-		padding: 0;
-		li{
-			margin-bottom: 10px;
-			a{}
-		}
-	}
+    a {
+      font-family: 'cormorant_garamondbold', serif;
+      font-weight: 700;
+      font-size: 30px;
+    }
+  }
+
+  h4 {
+    background: #aaaaaa;
+    color: #fff;
+    padding: 2px 5px;
+    display: inline-block;
+  }
+
+  ul {
+    display: block;
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      a {}
+    }
+  }
 }

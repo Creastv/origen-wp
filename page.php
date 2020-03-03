@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="col-md-12">
-            <div class="content-border">
+            <div class="box-border">
             <?php while (have_posts()) : the_post(); ?>
             <?php the_content();?>
             <?php endwhile; ?>

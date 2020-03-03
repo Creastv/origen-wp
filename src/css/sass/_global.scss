@@ -204,8 +204,8 @@ a {
   cursor: pointer;
   border-radius: 0;
   @media #{$sm} {
-    right: 5px;
-    bottom: 5px;
+    right: 15px;
+    bottom: 15px;
     font-size: 21px;
   }
 }
@@ -528,6 +528,8 @@ main.page {
 // main{
 //     padding: 100px 15px;
 // }
+.test {
+  }
 
 .header-section {
   position: relative;
@@ -559,6 +561,10 @@ main.page {
     font-weight: 700;
     font-size: 50px;
     margin: 0;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
     @media #{$sm} {
       font-size: 31px;
     }

@@ -11,7 +11,7 @@ $px = 'px';
 $pTop = get_field('padding-top_tvd') . 'px';
 $pBottom = get_field('padding-bottom_tvd') . 'px';
 ?>
-<section  <?php echo $id; ?> class="sec-wrap" style="padding-top:<?php echo $pTop; ?>; padding-bottom:<?php echo $pBottom; ?>;">
+<section  <?php echo $id; ?> class="sec-wrap twd" style="padding-top:<?php echo $pTop; ?>; padding-bottom:<?php echo $pBottom; ?>;">
         <div class="container-fluid <?php the_field('container_tvd') ?>">
             <div class="row">
                  <div class="col-md-12 my-paroller" data-aos-delay="200" data-aos="fade-up">
@@ -28,14 +28,14 @@ $pBottom = get_field('padding-bottom_tvd') . 'px';
                 </div>
 
                         
-                <div class="col-md-4 col-sm-4 my-paroller" data-aos-delay="300" data-aos="fade-up" data-aos-offset="100">
+                <div class="col-md-4 text-center col-sm-4 my-paroller" data-aos-delay="300" data-aos="fade-up" data-aos-offset="100">
                     <div class="box-border text-center">
                         <?php $imagenVideo = get_field('imagen_tvd');
                             if( !empty( $imagenVideo ) ): ?>
-                                <a href="<?php if( get_field('video_tvd') ): ?><?php the_field('video_tvd') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/proyecto-andalucia-origen-u-destino.mp4<?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive" src="<?php echo esc_url($imagenVideo['url']); ?>" alt="<?php echo esc_attr($imagenVideo['alt']); ?>"></a>
+                                <a href="<?php if( get_field('video_tvd') ): ?><?php the_field('video_tvd') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/proyecto-andalucia-origen-u-destino.mp4<?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive center-block" src="<?php echo esc_url($imagenVideo['url']); ?>" alt="<?php echo esc_attr($imagenVideo['alt']); ?>"></a>
                                 <i class="des-video"><?php echo esc_attr($imagenVideo['alt']); ?></i>
                         <?php else : ?>
-                            <a href="<?php if( get_field('video_tvd') ): ?><?php the_field('video_tvd') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/proyecto-andalucia-origen-u-destino.mp4<?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/src/img/en-andalutcia-empezo-todo.jpg" alt=""></a>
+                            <a href="<?php if( get_field('video_tvd') ): ?><?php the_field('video_tvd') ?> <?php else: ?> <?php echo get_template_directory_uri(); ?>/src/img/proyecto-andalucia-origen-u-destino.mp4<?php endif; ?>" class="html5lightbox" data-width="800" data-height="520" ><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/src/img/en-andalutcia-empezo-todo.jpg" alt=""></a>
                             <i class="des-video">Proyecto Andalucía, Origen y Destino</i>
                         <?php endif; ?>
                     </div>

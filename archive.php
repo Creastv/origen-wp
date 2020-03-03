@@ -19,7 +19,6 @@ get_header(); ?>
 						    elseif ($post->post_type == 'escenarios') :
 						    	printf( 'Escenarios', 'cr');	
 							elseif ($post->post_type == 'Experiencias') :
-								
 								printf( 'Experiencias', 'cr');	
 							elseif ( is_tag() ) :
 								single_tag_title();
@@ -63,11 +62,20 @@ get_header(); ?>
             </div>
         </div>
 
-        <?php if ($post->post_type == 'escenarios') :?>
+		<?php if ($post->post_type == 'escenarios') :?>
+			
 			<?php get_template_part( 'templates/archive-escenarios', get_post_format() ); ?>
 		<?php elseif ($post->post_type == 'experiencias') :?>
+			
 			<?php get_template_part( 'templates/archive-experiencias', get_post_format() ); ?>
 		<?php elseif ($post->post_type == 'servicios') :?>
+			<?php if(get_field('descripcion_servicios', 'option')):?>
+				<div class="col-md-12">
+					<div class="box-border">
+						<?php the_field('descripcion_servicios', 'option'); ?>
+					</div>
+				</div>
+			<?php endif; ?>
 			<?php get_template_part( 'templates/archive-servicios', get_post_format() ); ?>
 		<?php else: ?>
 			<div class="col-md-12 col-sm-12">

@@ -38,7 +38,7 @@
     <div class="box-border">
         <h4>Conoce los escenarios de un viaje histórico</h4>
         <?php
-        $terms =  get_terms("escenario", array("orderby" => "slug", "parent" => 0));
+        $terms =  get_terms("escenario", array("orderby" => "slug", "parent" => 0, 'order' => 'DESC'));
         $currentterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
             echo '<ul class="nav-fichias">';
             foreach ($terms as $term) { 
