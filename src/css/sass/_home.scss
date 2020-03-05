@@ -371,6 +371,19 @@
         }
       }
 
+      h3 {
+        font-family: 'cormorant_garamondbold', serif;
+        font-weight: 700;
+        font-size: 61px;
+        font-weight: 900;
+        color: #fff;
+        margin-top: 0;
+        text-transform: uppercase;
+        @media #{$lg} {
+          font-size: 21px;
+        }
+      }
+
       .btn {
         border: 1px solid #fff;
         color: #fff;

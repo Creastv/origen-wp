@@ -5,7 +5,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<!-- <title><?php the_title(' ', ' '); ?></title> -->
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
@@ -74,8 +74,8 @@
     <?php if (is_page_template('templates/sg.php')):?>
         <main  class="home">
     <?php else: ?>
-        <main  id="Page" class="sec-wrap my-paroller" data-aos-delay="300" data-aos="fade-up" class="page">
-            <article class="container-fluid wraper  <?php post_class(); ?>" id="post-<?php the_ID(); ?>">
+        <main  id="Page" class="sec-wrap my-paroller page" data-aos-delay="300" data-aos="fade-up" >
+            <article class="container-fluid wraper hentry" id="post-<?php the_ID(); ?>">
                 <div class="row">
     <?php endif; ?>
 

@@ -15,46 +15,46 @@ get_header(); ?>
 							if ( is_category() ) :
 								single_cat_title();
 						    elseif ($post->post_type == 'servicios') :
-						    	printf( 'Nuestros servicios', 'cr');
+						    	printf( 'Nuestros servicios', 'crea');
 						    elseif ($post->post_type == 'escenarios') :
-						    	printf( 'Escenarios', 'cr');	
+						    	printf( 'Escenarios', 'crea');	
 							elseif ($post->post_type == 'Experiencias') :
-								printf( 'Experiencias', 'cr');	
+								printf( 'Experiencias', 'crea');	
 							elseif ( is_tag() ) :
 								single_tag_title();
 							elseif ( $tax ) :
-								printf( ''.$tax->name .'', 'cr');
+								printf( ''.$tax->name .'', 'crea');
 							elseif ( is_author() ) :the_post(); 
 
 								printf( '<span class="vcard">' . get_the_author() . '</span>' );
 								rewind_posts();
 
 							elseif ( is_day() ) :
-								printf( __( 'Day: %s', 'cr' ), '<span>' . get_the_date() . '</span>' );
+								printf( __( 'Day: %s', 'crea' ), '<span>' . get_the_date() . '</span>' );
 
 							elseif ( is_month() ) :
-								printf( __( 'Month: %s', 'cr' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+								printf( __( 'Month: %s', 'crea' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 							elseif ( is_year() ) :
-								printf( __( 'Year: %s', 'cr' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								printf( __( 'Year: %s', 'crea' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-								_e( 'Asides', 'cr' );
+								_e( 'Asides', 'crea' );
 
 							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-								_e( 'Images', 'cr');
+								_e( 'Images', 'crea');
 
 							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-								_e( 'Videos', 'cr' );
+								_e( 'Videos', 'crea' );
 
 							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-								_e( 'Quotes', 'cr' );
+								_e( 'Quotes', 'crea' );
 
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-								_e( 'Links', 'cr' );
+								_e( 'Links', 'crea' );
 
 							else :
-								_e( 'Blog', 'cr' );
+								_e( 'Blog', 'crea' );
 
 							endif;
 						?>
@@ -85,7 +85,7 @@ get_header(); ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<div class="ficha">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<p><?php the_excerpt(); ?></p>
+								<?php the_excerpt(); ?>
 								<a href="<?php the_permalink(); ?>" class="leemas">lee más</a>
 								<hr>
 							</div>
@@ -95,12 +95,12 @@ get_header(); ?>
 				</div>
 			</div>	
 		<?php endif; ?>
-		
-<?php get_footer(); ?>
-<script>
+		  <script>
         jQuery(document).ready(function($) {
             jQuery('#grid').masonry({
                 itemSelector: '.ficha'
             });
         });
     </script>
+		
+<?php get_footer(); ?>

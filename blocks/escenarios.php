@@ -56,7 +56,7 @@ $pBottom = get_field('padding_bottom_es') . 'px';
                                                 </div>
                                             <?php endif;?>
                                             <div class="content">
-                                               <h2><?php echo $titleEs; ?></h2>
+                                               <h3><?php echo $titleEs; ?></h3>
                                                 <?php if (!empty($linkEs && $buttonEs )):?>
                                                 <span class="btn"><?php echo $buttonEs; ?></span>
                                                 <?php endif;?>

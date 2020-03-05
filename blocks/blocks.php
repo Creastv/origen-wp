@@ -4,8 +4,8 @@ function register_acf_block_types() {
     // register Block.
     acf_register_block_type(array(
         'name'              => 'title-des',
-        'title'             => __('Título - descripción'),
-        'description'       => __('Block Título - Descripción'),
+        'title'             => __('Título - descripción', 'crea'),
+        'description'       => __('Block Título - Descripción', 'crea'),
         'render_template'   => 'blocks/title-des.php',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',
@@ -13,8 +13,8 @@ function register_acf_block_types() {
     ));
     acf_register_block_type(array(
         'name'              => 'title-video-des',
-        'title'             => __('Título - vídeo - descripción'),
-        'description'       => __('Block Título - Vídeo - descripción'),
+        'title'             => __('Título - vídeo - descripción', 'crea'),
+        'description'       => __('Block Título - Vídeo - descripción', 'crea'),
         'render_template'   => 'blocks/title-video-des.php',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',
@@ -22,8 +22,8 @@ function register_acf_block_types() {
     ));
     acf_register_block_type(array(
         'name'              => 'hero-img',
-        'title'             => __('Hero imagen'),
-        'description'       => __('Block Hero imagen'),
+        'title'             => __('Hero imagen', 'crea'),
+        'description'       => __('Block Hero imagen', 'crea'),
         'render_template'   => 'blocks/hero-img.php',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',
@@ -32,8 +32,8 @@ function register_acf_block_types() {
 
     acf_register_block_type(array(
         'name'              => 'experiencia',
-        'title'             => __('Experiencia'),
-        'description'       => __('Block Experiencia'),
+        'title'             => __('Experiencia', 'crea'),
+        'description'       => __('Block Experiencia', 'crea'),
         'render_template'   => 'blocks/experiencia.php',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',
@@ -42,8 +42,8 @@ function register_acf_block_types() {
 
     acf_register_block_type(array(
         'name'              => 'escenarios',
-        'title'             => __('Escenarios'),
-        'description'       => __('Block Escenarios'),
+        'title'             => __('Escenarios', 'crea'),
+        'description'       => __('Block Escenarios', 'crea'),
         'render_template'   => 'blocks/escenarios.php',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',
@@ -51,8 +51,8 @@ function register_acf_block_types() {
     ));
     acf_register_block_type(array(
         'name'              => 'info',
-        'title'             => __('Info del proveedor'),
-        'description'       => __('Block info de proveedor'),
+        'title'             => __('Info del proveedor', 'crea'),
+        'description'       => __('Block info de proveedor', 'crea'),
         'render_template'   => 'blocks/info-proveedor.php',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',

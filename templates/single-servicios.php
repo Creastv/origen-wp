@@ -15,7 +15,12 @@
                 <div class="row">
                     <div class="col-md-4">
                         <?php if ( has_post_thumbnail() ) : ?>
-                            <?php  the_post_thumbnail('large') ?>
+                            <?php $post_thumbnail_attr = array(
+                                'class' => "attachment-$size",
+                                'alt'   => get_the_title(),
+                                'title' => get_the_title(),
+                            ); ?>
+                            <?php the_post_thumbnail( 'large', $post_thumbnail_attr );?>
                         <?php else: ?>
                             <img class="img-responsive full-img" src="<?php echo get_template_directory_uri(); ?>/src/img/spaceholder.jpg" alt="<?php the_title(); ?>">
                         <?php endif; ?>

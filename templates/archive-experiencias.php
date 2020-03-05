@@ -10,7 +10,7 @@
                 <ul class="nav-fichias">
                 <?php foreach( $terms as $term ) : ?>
                      <?php  $class = $currentterm->slug == $term->slug ? 'active' : '' ; ?>  
-                    <li class="<?php echo $term->slug; ?> <?php echo $class; ?> " ><a href="<?php echo get_term_link($term) ?>"><img src="<?php the_field('imagen_descatada', $term); ?>" /> <?php echo $term->name ?></a></li>
+                    <li class="<?php echo $term->slug; ?> <?php echo $class; ?> " ><a href="<?php echo get_term_link($term) ?>"><img src="<?php the_field('imagen_descatada', $term); ?>" alt="<?php echo $term->slug; ?>" /> <?php echo $term->name ?></a></li>
                  <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
@@ -23,8 +23,8 @@
         <?php if ( have_posts() ) : ?>
             <?php while ( have_posts() ) : the_post(); ?>
                 <div class="ficha">
-                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <p><?php the_excerpt(); ?></p>
+                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <?php the_excerpt(); ?>
                     <a href="<?php the_permalink(); ?>" class="leemas">lee más</a>
                     <hr>
                 </div>

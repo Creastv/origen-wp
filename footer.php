@@ -53,6 +53,5 @@
     </footer>
     <a href="#" class="scrollToTop" style="display:none;"><i class="fa fa-arrow-up"></i></a>
   <?php wp_footer(); ?>
-  
  </body>
 </html>

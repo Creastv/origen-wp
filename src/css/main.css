@@ -6612,6 +6612,22 @@ a.leemas {
   }
 }
 
+.escenarios .box .content h3 {
+  font-family: 'cormorant_garamondbold', serif;
+  font-weight: 700;
+  font-size: 61px;
+  font-weight: 900;
+  color: #fff;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1200px) {
+  .escenarios .box .content h3 {
+    font-size: 21px;
+  }
+}
+
 .escenarios .box .content .btn {
   border: 1px solid #fff;
   color: #fff;

@@ -71,7 +71,7 @@ endif;
 add_action( 'after_setup_theme', 'crea_setup' );
 function cr_widgets_init() {
         register_sidebar( array(
-			'name'          => __( 'Sidebar', 'cr' ),
+			'name'          => __( 'Sidebar', 'crea' ),
 			'id'            => 'sidebar-1',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -217,17 +217,17 @@ add_action( 'init', 'cr_experiencias_post_types' );
 // cat Experiencias
 function create_experiencias_taxonomies() {
     $labels = array(
-        'name'              => _x( 'Categorias', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Categorias', 'taxonomy singular name' ),
-        'search_items'      => __( 'Buscar categoría' ),
-        'all_items'         => __( 'Todas categorias' ),
-        'parent_item'       => __( 'Categoría principal' ),
-        'parent_item_colon' => __( 'Categoría principal:' ),
-        'edit_item'         => __( 'Editar categoría' ),
-        'update_item'       => __( 'Actualizar categoría' ),
-        'add_new_item'      => __( 'Añadir nuevo Category' ),
-        'new_item_name'     => __( 'Nuevo nombre de categoría' ),
-        'menu_name'         => __( 'Experiencias categorias' ),
+        'name'              => _x( 'Categorias', 'crea' ),
+        'singular_name'     => _x( 'Categorias',  'crea' ),
+        'search_items'      => __( 'Buscar categoría', 'crea' ),
+        'all_items'         => __( 'Todas categorias', 'crea' ),
+        'parent_item'       => __( 'Categoría principal', 'crea' ),
+        'parent_item_colon' => __( 'Categoría principal:', 'crea' ),
+        'edit_item'         => __( 'Editar categoría', 'crea' ),
+        'update_item'       => __( 'Actualizar categoría', 'crea' ),
+        'add_new_item'      => __( 'Añadir nuevo Category', 'crea' ),
+        'new_item_name'     => __( 'Nuevo nombre de categoría', 'crea' ),
+        'menu_name'         => __( 'Experiencias categorias', 'crea' ),
     );
 
     $args = array(
@@ -289,17 +289,17 @@ add_action( 'init', 'cr_escenarios_post_types' );
 // cat Escenarios
 function create_escenarios_taxonomies() {
     $labels = array(
-        'name'              => _x( 'Categorias', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Categorias', 'taxonomy singular name' ),
-        'search_items'      => __( 'Buscar categoría' ),
-        'all_items'         => __( 'Todas categorias' ),
-        'parent_item'       => __( 'Categoría principal' ),
-        'parent_item_colon' => __( 'Categoría principal:' ),
-        'edit_item'         => __( 'Editar categoría' ),
-        'update_item'       => __( 'Actualizar categoría' ),
-        'add_new_item'      => __( 'Añadir nuevo Category' ),
-        'new_item_name'     => __( 'Nuevo nombre de categoría' ),
-        'menu_name'         => __( 'Escenarios categorias' ),
+        'name'              => _x( 'Categorias', 'crea' ),
+        'singular_name'     => _x( 'Categorias', 'crea' ),
+        'search_items'      => __( 'Buscar categoría', 'crea' ),
+        'all_items'         => __( 'Todas categorias', 'crea' ),
+        'parent_item'       => __( 'Categoría principal', 'crea' ),
+        'parent_item_colon' => __( 'Categoría principal:', 'crea' ),
+        'edit_item'         => __( 'Editar categoría', 'crea' ),
+        'update_item'       => __( 'Actualizar categoría', 'crea' ),
+        'add_new_item'      => __( 'Añadir nuevo Category', 'crea' ),
+        'new_item_name'     => __( 'Nuevo nombre de categoría', 'crea' ),
+        'menu_name'         => __( 'Escenarios categorias', 'crea' ),
     );
 
     $args = array(
@@ -344,10 +344,10 @@ function cr_content_nav( $nav_id ) {
 				<?php next_post_link( '<div class="nav-next next">%link</div>', '%title <i class="fa fa-long-arrow-right" aria-hidden="true"></i>' ); ?>
 			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 				<?php if ( get_next_posts_link() ) : ?>
-				<div class="nav-previous prev"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'cr' ) ); ?></div>
+				<div class="nav-previous prev"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'crea' ) ); ?></div>
 				<?php endif; ?>
 				<?php if ( get_previous_posts_link() ) : ?>
-				<div class="nav-next next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'cr' ) ); ?></div>
+				<div class="nav-next next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'crea' ) ); ?></div>
 				<?php endif; ?>
 			<?php endif; ?>
 	</div ><!-- #<?php echo esc_html( $nav_id ); ?> -->
